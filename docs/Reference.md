@@ -35,7 +35,7 @@
     - [`server.path(relativeTo)`](#serverpathrelativeto)
     - [`server.register(plugins, [options], callback)`](#serverregisterplugins-options-callback)
     - [`server.render(template, context, [options], callback)`](#serverrendertemplate-context-options-callback)
-    - [`server.route(options)`](#serverrouteoptions)
+    - [`server.route(options)`](#server.route(options))
     - [`server.select(labels)`](#serverselectlabels)
     - [`server.start([callback])`](#serverstartcallback)
     - [`server.state(name, [options])`](#serverstatename-options)
@@ -334,10 +334,10 @@ property provides the registration preferences passed the
 [`server.register()`](#serverregisterplugins-options-callback) method. `config` is an object with
 the following properties:
 - `route` - route adding preferences:
-    - `prefix` - the route path prefix used by any calls to [`server.route()`](#serverrouteoptions)
+    - `prefix` - the route path prefix used by any calls to [`server.route()`](#server.route(options))
       from the server.
     - `vhost` - the route virtual host settings used by any calls to
-      [`server.route()`](#serverrouteoptions) from the server.
+      [`server.route()`](#server.route(options)) from the server.
 
 The `config` property should be considered read-only and should not be changed.
 
@@ -1326,7 +1326,7 @@ server.render('hello', context, function (err, rendered, config) {
 ### `server.route(options)`
 
 Adds a connection route where:
-- `options` - a route configuration object or an array of configuration objects.
+- `options` - a [route configuration object](#route-configuration) or an array of configuration objects.
 
 ```js
 var Hapi = require('hapi');
@@ -1819,7 +1819,7 @@ register.attributes = {
 Incoming requests are handled by the server via routes. Each route describes an HTTP endpoint with
 a path, method, and other properties. The route logic is divided between static configuration,
 prerequisite functions and a route handler function. Routes are added via the
-[`server.route()`](#serverrouteoptions) method.
+[`server.route()`](#server.route(options)) method.
 
 ### Request lifecycle
 
