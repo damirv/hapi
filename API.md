@@ -3418,4 +3418,4 @@ var handler = function (request, reply) {
 ```
 
 Changing to a permanent or non-rewritable redirect is also available see
-[response object redirect](#response-object-redirect) for more information.
+[response object redirect](#response-object-redirect-methods) for more information.
